@@ -5,8 +5,9 @@
 \usepackage{bm}
 \usepackage{listings}
 \usepackage{pgfplots} 
-%\usepackage[marginparsep=16pt, margin=1.75in, showframe]{geometry}
-\usepackage[marginparsep=16pt, margin=1.0in]{geometry}
+\pgfplotsset{compat=newest}
+\usepackage[marginparsep=16pt, margin=1.75in, showframe]{geometry}
+%\usepackage[marginparsep=16pt, margin=1.0in]{geometry}
 
 \usepackage{amsmath,amssymb}
 \usepackage{multicol}
@@ -17,6 +18,15 @@
 \newcommand{\examnum}{End-Semester Examination}
 \newcommand{\examdate}{\today}
 \newcommand{\timelimit}{60 Minutes}
+
+
+\lstset{
+	basicstyle=\ttfamily,
+	columns=fullflexible,
+	frame=single,
+	breaklines=true
+}
+
 
 \pagestyle{head}
 \firstpageheader{}{}{}
@@ -39,7 +49,7 @@
 
 \question\marginnote{$10$} Answer any $5$ questions.
 \begin{parts}
-\part\marginnote{$2$}  What do you mean by precise and accurate measurements? 
+%\part\marginnote{$2$}  What do you mean by precise and accurate measurements? 
 \part\marginnote{$2$}Power in a circuit is measured by measuring a current through a resistor. The current is measured with an accuracy of $\pm 1.5\% $ and the tolerance band of the resistor is $\pm 0.5\%$. The errors are limiting or guarantee errors. Find the accuracy with which the power is measured.
 \part\marginnote{$2$}  What will be the output of the following python program?
 \begin{lstlisting}[language=Python]
@@ -60,6 +70,7 @@ print(e)
 \sum^N_{n=0} r^n = \frac{1-r^N}{1-r}.\nonumber
 \end{equation}
 \end{subparts}
+\part\marginnote{$2$} Find the inverse $z-$ transform of the function $F(z)=\displaystyle\frac{6}{z-2}$.
 \part\marginnote{$2$} 
 \part\marginnote{$2$} 
 \part\marginnote{$2$} 
@@ -89,36 +100,17 @@ Write down the output of the following \LaTeX \ snippet.
 
 \usepackage{amsmath}
 
-\title{{\Large	\bf Chaos in the Quantum Double Well Oscillator:\\
-		The Ehrenfest View Revisited}}
-
+\title{{\Large	\bf Chaos in the Quantum Double Well Oscillator:\\The Ehrenfest View Revisited}}
 \begin{document}
 \maketitle
-
-It is generally agreed that the full quantum dynamics does not exhibit 
-chaos. For systems which exhibit chaotic dynamics in the classical
-limit, it was clearly established by Fishman, Grempel and Prange
-that there exists a critical time $t \sim 0$ ($1/h^{1/r}$) beyond
-which the dynamics crosses over to the quantal behaviour.  It was 
-conjectured in the late eighties that there could be systems where 
-the classical dynamics is obviously regular but the semiquantal 
-dynamics can be chaotic. In support of this conjecture,
-Pattanayak and Schieve explored the semiquantal dynamics of the
-double well oscillator governed by the Hamiltonian
+Pattanayak and Schieve explored the semiquantal dynamics of the double well oscillator governed by the Hamiltonian
 \begin{equation}
 H = \frac{P^2} {2} - \frac{1} {2} \ x^2 + \frac{\lambda} {4} \ x^4
 \end{equation}
-The classical dynamics of this oscillator is obviously regular, as
-explained in Landau-Lifshitz (Vol. 1), being a periodic trajectory
-centered about $x  
-= \pm {1\over \sqrt{\lambda}}$ for total energy $E$ in the range 
-$0 > E > -1/4$ and about $x=0$ for $E>0$. It was shown, based on an
-Ehrenfest equation approach that in the semiquantal limit the quantum
-fluctuations cause the dynamics of this oscillator to become chaotic
-with four repelling zones in the phase space.  
+The classical dynamics of this oscillator is obviously regular, as explained in Landau-Lifshitz (Vol. 1), being a periodic trajectory
+centered about $x = \pm \displaystyle\frac{1} {\sqrt{\lambda}}$ for total energy $E$ in the range  $0 > E > -1/4$ and about $x=0$ for $E>0$. It was shown, based on an Ehrenfest equation approach that in the semiquantal limit the quantum fluctuations cause the dynamics of this oscillator to become chaotic with four repelling zones in the phase space.  
 
-The semiquantal 
-Ehrenfest dynamics of the centroid $\langle x\rangle$ of a wave packet is given by
+The semiquantal  Ehrenfest dynamics of the centroid $\langle x\rangle$ of a wave packet is given by
 \begin{equation}
 \langle \ddot x\rangle = \langle x\rangle - \lambda \langle x^3\rangle ,
 \end{equation}
@@ -137,14 +129,13 @@ N_2 (t) e^{- \left(x+a_0 + \epsilon (t)\right)^2/2 b^2_0} .
 Turning to the dynamics, we now have the result
 \begin{subequations}
 \begin{equation}
-\langle x\rangle = (a_0 + \epsilon) (N_1^2 - N_2^2) , 
+\langle x\rangle = (a_0 + \epsilon) (N_1^2 - N_2^2), 
 \end{equation}
 \begin{equation}
 \langle x^3\rangle = (a_0 + \epsilon) \left[(a_0 + \epsilon)^2 
 + \frac{3} {2} b^2_0\right] (N_1^2 - N^2_2) .
 \end{equation}
 \end{subequations}
-
 \end{document}
 \end{lstlisting}
 \pagebreak
@@ -170,8 +161,27 @@ Here, $\alpha_A$ represents the error on the mean $\bar{A}$ . Show that the unce
 \end{subparts}
 \part\marginnote{$10$}  Answer the following questions.
 \begin{subparts}
-\subpart\marginnote{$3$} 
-\subpart\marginnote{$3$} 
+\subpart\marginnote{$6$} Find the Laplace transform of the rectangualar wave given in the figure below:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+width=10cm,
+height=4cm,
+x axis line style={-stealth},
+y axis line style={-stealth},
+xticklabels={0,1, $\frac{T}{2}$,$T$, $\frac{3T}{2}$, $2T$},
+ymax = 1.5,xmax=5.2,
+axis lines*=center,
+yticklabels={$-A$,$-A$, $0$, $A$},
+xlabel={t $\rightarrow$},
+xlabel near ticks,
+ylabel near ticks]
+\addplot+[thick,mark=none,const plot]
+coordinates
+{(0,-1) (0,1) (1,-1) (2,1) (3,-1) (4,1) (5,-1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \subpart\marginnote{$4$} 
 \end{subparts}
  
