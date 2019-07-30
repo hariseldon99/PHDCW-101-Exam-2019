@@ -1,0 +1,41 @@
+\documentclass [12pt,a4] {article}
+	
+	\usepackage{amsmath}
+	
+	\title{{\Large	\bf Chaos in the Quantum Double Well Oscillator:\\The Ehrenfest View Revisited}}
+	\begin{document}
+	\maketitle
+	Pattanayak and Schieve explored the semiquantal dynamics of the double well oscillator governed by the Hamiltonian
+	\begin{equation}
+	H = \frac{P^2} {2} - \frac{1} {2} \ x^2 + \frac{\lambda} {4} \ x^4
+	\end{equation}
+	The classical dynamics of this oscillator is obviously regular, as explained in Landau-Lifshitz (Vol. 1), being a periodic trajectory
+	centered about $x = \pm \displaystyle\frac{1} {\sqrt{\lambda}}$ for total energy $E$ in the range  $0 > E > -1/4$ and about $x=0$ for $E>0$. It was shown, based on an Ehrenfest equation approach that in the semiquantal limit the quantum fluctuations cause the dynamics of this oscillator to become chaotic with four repelling zones in the phase space.  
+	
+	The semiquantal  Ehrenfest dynamics of the centroid $\langle x\rangle$ of a wave packet is given by
+	\begin{equation}
+	\langle \ddot x\rangle = \langle x\rangle - \lambda \langle x^3\rangle ,
+	\end{equation}
+	\textit{i.e.}
+	\begin{equation}
+	\langle\ddot x\rangle - \langle x\rangle + \lambda \langle x\rangle^3 
+	= \lambda \left[\langle x\rangle^3 - \langle x^3\rangle\right] = Q
+	\end{equation}
+	With this in mind, the class of quantum wave packets that we
+	will work with is
+	\begin{equation}
+	\psi (x,t) = N_1 (t) e^{- \left(x-a_0 - \epsilon (t)\right)^2/2 b^2_0} + 
+	N_2 (t) e^{- \left(x+a_0 + \epsilon (t)\right)^2/2 b^2_0} .
+	\end{equation}
+	
+	Turning to the dynamics, we now have the result
+	\begin{subequations}
+	\begin{equation}
+	\langle x\rangle = (a_0 + \epsilon) (N_1^2 - N_2^2), 
+	\end{equation}
+	\begin{equation}
+	\langle x^3\rangle = (a_0 + \epsilon) \left[(a_0 + \epsilon)^2 
+	+ \frac{3} {2} b^2_0\right] (N_1^2 - N^2_2) .
+	\end{equation}
+	\end{subequations}
+	\end{document}
